@@ -59,6 +59,6 @@ public class TestArea {
 
       boolean found=actual.contains(expected);
 
-      Assertions.assertTrue(found,"Az eredmenyt nem jol hatarozta meg!");
+      Assertions.assertTrue(found,"A teruletet nem jol jeleniti meg meg!");
    }
 }

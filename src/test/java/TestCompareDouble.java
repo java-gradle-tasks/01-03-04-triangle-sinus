@@ -52,7 +52,7 @@ public class TestCompareDouble {
       System.out.println("Elvart:"+newLine+expected);
       System.out.println("Aktualis:"+newLine+actual);
 
-      Assertions.assertEquals(expected,actual,0.4);
+      Assertions.assertEquals(expected,actual,0.4,"A teruletet nem jol szamolta ki");
    }
 
    private double findResult(String actual) {

@@ -60,6 +60,6 @@ public class TestAngle {
 
       boolean found=actual.contains(expected);
 
-      Assertions.assertTrue(found,"Az eredmenyt nem jol hatarozta meg!");
+      Assertions.assertTrue(found,"A szoget nem jol hatarozta meg!");
    }
 }
