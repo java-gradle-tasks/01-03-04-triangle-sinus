@@ -47,7 +47,7 @@ public class TestSolution {
 
       String expected="Haromszog teruletenek meghatarozasa!"+newLine;
       expected+="Adja meg a haromszog a oldalat:Adja meg a haromszog b oldalat:Adja meg az gamma szoget (fok):A szog radianban:0,549"+newLine;
-      expected+="A haromszog terulete:103,412";
+      expected+="A haromszog terulete:103,240";
       String actual=byteArrayOutputStream.toString();
 
       System.out.println("Elvart:"+newLine+expected);

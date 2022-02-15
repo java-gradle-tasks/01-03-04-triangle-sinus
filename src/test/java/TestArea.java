@@ -47,9 +47,9 @@ public class TestArea {
 
       String expected="";
       if (System.getProperty("os.name").startsWith("Windows")) {
-         expected = "A haromszog terulete:103,412";
+         expected = "A haromszog terulete:103,240";
       } else {
-         expected = "A haromszog terulete:103.412";
+         expected = "A haromszog terulete:103,240";
       }
 
       String actual=byteArrayOutputStream.toString();
@@ -59,6 +59,6 @@ public class TestArea {
 
       boolean found=actual.contains(expected);
 
-      Assertions.assertTrue(found,"Az eredményt nem jól határozta meg");
+      Assertions.assertTrue(found,"Az eredmenyt nem jol hatarozta meg!");
    }
 }
