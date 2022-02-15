@@ -6,7 +6,7 @@ import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
 import java.io.PrintStream;
 
-public class TestSolution {
+public class TestCompareDouble {
 
    @Test
    public void test() {
@@ -45,16 +45,44 @@ public class TestSolution {
       System.setIn(stdin);
       System.setOut(stdout);
 
-      String expected="Haromszog teruletenek meghatarozasa!"+newLine;
-      expected+="Adja meg a haromszog a oldalat:Adja meg a haromszog b oldalat:Adja meg az gamma szoget (fok):A szog radianban:0,549"+newLine;
-      expected+="A haromszog terulete:103";
-      String actual=byteArrayOutputStream.toString();
+      double expected=103.412;
+      String actualString=byteArrayOutputStream.toString();
+      double actual=findResult(byteArrayOutputStream.toString());
 
       System.out.println("Elvart:"+newLine+expected);
       System.out.println("Aktualis:"+newLine+actual);
 
+      Assertions.assertEquals(expected,actual,0.1);
+   }
 
-      boolean found=actual.contains(expected);
-      Assertions.assertTrue(found,"A kiiratas nem megfelelo!");
+   private double findResult(String actual) {
+
+      String resultString="";
+      double result=0;
+      for(int i=actual.length()-1;Character.isDigit(actual.charAt(i)) || actual.charAt(i)==',' || actual.charAt(i)=='.' ; i=i-1) {
+         if (i<0)
+            break;
+         resultString+=actual.charAt(i);
+      }
+      try {
+            String reverseString=reverseString(resultString);
+            String noWrongComa=reverseString.replace(',','.');
+            result = Double.parseDouble(noWrongComa);
+      }
+      catch (NumberFormatException numberFormatException) {
+         return 0;
+      }
+      return result;
+
+   }
+
+   private String reverseString(String str) {
+      String nstr="";
+      for (int i=0; i<str.length(); i++)
+      {
+         char ch= str.charAt(i); //extracts each character
+         nstr= ch+nstr; //adds each character in front of the existing string
+      }
+      return nstr;
    }
 }

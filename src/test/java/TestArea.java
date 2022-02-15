@@ -47,9 +47,9 @@ public class TestArea {
 
       String expected="";
       if (System.getProperty("os.name").startsWith("Windows")) {
-         expected = "A haromszog terulete:103,240";
+         expected = "A haromszog terulete:103";
       } else {
-         expected = "A haromszog terulete:103,240";
+         expected = "A haromszog terulete:103";
       }
 
       String actual=byteArrayOutputStream.toString();
