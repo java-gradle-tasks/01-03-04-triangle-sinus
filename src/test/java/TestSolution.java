@@ -46,7 +46,12 @@ public class TestSolution {
       System.setOut(stdout);
 
       String expected="Haromszog teruletenek meghatarozasa!"+newLine;
-      expected+="Adja meg a haromszog a oldalat:Adja meg a haromszog b oldalat:Adja meg az gamma szoget (fok):A szog radianban:0,549"+newLine;
+      if (System.getProperty("os.name").startsWith("Windows")) {
+         expected += "Adja meg a haromszog a oldalat:Adja meg a haromszog b oldalat:Adja meg az gamma szoget (fok):A szog radianban:0,549" + newLine;
+      } else {
+         expected += "Adja meg a haromszog a oldalat:Adja meg a haromszog b oldalat:Adja meg az gamma szoget (fok):A szog radianban:0.549" + newLine;
+      }
+
       expected+="A haromszog terulete:103";
       String actual=byteArrayOutputStream.toString();
 

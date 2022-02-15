@@ -47,12 +47,12 @@ public class TestCompareDouble {
 
       double expected=103.412;
       String actualString=byteArrayOutputStream.toString();
-      double actual=findResult(byteArrayOutputStream.toString());
+      double actual=findResult(actualString);
 
       System.out.println("Elvart:"+newLine+expected);
       System.out.println("Aktualis:"+newLine+actual);
 
-      Assertions.assertEquals(expected,actual,0.1);
+      Assertions.assertEquals(expected,actual,0.4);
    }
 
    private double findResult(String actual) {

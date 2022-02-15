@@ -49,7 +49,7 @@ public class TestAngle {
       if (System.getProperty("os.name").startsWith("Windows")) {
          expected = "A szog radianban:0,549";
       } else {
-         expected = "A szog radianban:0,549";
+         expected = "A szog radianban:0.549";
       }
 
 
