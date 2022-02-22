@@ -55,34 +55,10 @@ public class TestCompareDouble {
       Assertions.assertEquals(expected,actual,0.4,"A teruletet nem jol szamolta ki");
    }
 
-   private double findResult(String actual) {
-
-      String resultString="";
-      double result=0;
-      for(int i=actual.length()-1;Character.isDigit(actual.charAt(i)) || actual.charAt(i)==',' || actual.charAt(i)=='.' ; i=i-1) {
-         if (i<0)
-            break;
-         resultString+=actual.charAt(i);
-      }
-      try {
-            String reverseString=reverseString(resultString);
-            String noWrongComa=reverseString.replace(',','.');
-            result = Double.parseDouble(noWrongComa);
-      }
-      catch (NumberFormatException numberFormatException) {
-         return 0;
-      }
-      return result;
-
-   }
-
-   private String reverseString(String str) {
-      String nstr="";
-      for (int i=0; i<str.length(); i++)
-      {
-         char ch= str.charAt(i); //extracts each character
-         nstr= ch+nstr; //adds each character in front of the existing string
-      }
-      return nstr;
+   private double findResult(String actual)   {
+      String[] arrOfStr = actual.split(":");
+      String numberString=arrOfStr[arrOfStr.length - 1];
+      String numberFormatDecimal=numberString.replace(',','.');
+      return Double.parseDouble(numberFormatDecimal);
    }
 }
